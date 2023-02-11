@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <style>
+        
+        body {
+            background-color: #161616;
+        }
+
+        .login-form {
+          width: 300px;
+          margin: 250px auto;
+          padding: 50px;
+          border: 5px solid #272727;
+          border-radius: 10px;
+          background-color: #333333;
+          text-align: center;
+          
+        }
+      
+        .login-form h3 {
+          font-family: Arial, sans-serif;
+          text-align: center;
+          margin-bottom: 30px;
+          color: #fff;
+            
+        }
+      
+        .form-control {
+          width: 93%;
+          padding: 10px;
+          margin-bottom: 20px;
+          border: 2px solid #dbdbdb;
+          border-radius: 10px;
+          background-color: #ffffff;
+        }
+      
+        .btn {
+          width: 50%;
+          padding: 10px;
+          background-color: #161616;
+          color: #fff;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+        }
+      
+        .error-message {
+            font-family: Arial, sans-serif;
+          color: red;
+          text-align: center;
+          margin-bottom: 10px;
+        }
+      </style>
+      
+  </head>
+  <body>
+    <div class="login-form">
+      <h3>Login</h3>
+      <form>
+        <input type="text" class="form-control" id="username" placeholder="Username">
+        <input type="password" class="form-control" id="password" placeholder="Password">
+        <button type="button" class="btn" onclick="submitForm()">Submit</button>
+      </form>
+      <div id="error-message" class="error-message"></div>
+    </div>
+
+    <script>
+      function submitForm() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
+
+        if (username === "admin" && password === "password") {
+          window.location.href = "dashboard.html";
+        } else {
+          document.getElementById("error-message").innerHTML = "Invalid username or password";
+        }
+      }
+    </script>
+  </body>
+</html>
